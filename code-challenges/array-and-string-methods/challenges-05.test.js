@@ -117,7 +117,7 @@ Write a function named stepAction that takes in the recipe and extracts the acti
 Return a new array containing just the verbs. For example, ['Mix until evenly distributed'] returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
 
-const splitFoods = (recipe) => {
+const stepActions = (recipe) => {
     let result = [];
     for (let i = 0; i < recipe.length; i++) {
         let str =recipe[i]
@@ -144,7 +144,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-    for (i=0; i<arr.length; i++){
+    for (let i=0; i<arr.length; i++){
       let even = arr[i]  % 2;
       if (even ===0){
         arr.splice(i,1);
