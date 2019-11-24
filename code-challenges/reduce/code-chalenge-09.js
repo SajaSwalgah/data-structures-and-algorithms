@@ -9,8 +9,9 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+    let arrLength= arr.reduce((acc, val, idx) => acc+1);
+  return arrLength
+  }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -68,9 +69,14 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+
 const returnNames = (arr) => {
-  // Solution code here...
-};
+    let names = arr.reduce((acc, val, idx) => {
+      acc.push(val.name);
+      return acc;
+    }, [] );
+    return names;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -134,9 +140,15 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
-
+    return arr.reduce((acc, val, idx) => {
+      if(val.children){
+        return acc + val.children.length;
+      }
+      else{
+        return acc;
+      }
+    }, 0);
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -146,8 +158,11 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
-};
+    const sum = arr.reduce( (acc,val, idx) => {
+      return (acc + val);
+    });
+    return sum / arr.length;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
