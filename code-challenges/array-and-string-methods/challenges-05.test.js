@@ -13,18 +13,15 @@ For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
+
+
 const howMuchPencil = (str) => {
-    let result = [];
-    let arr = str.split('');
-    for (let i = 0; i < arr.length; i++) {
-        let array = str.split('');
-        let sharping = array.slice(i);
-        let join = sharping.join('')
-        result.push(join);
-    }
-    result.push('');
-    return result;
-};
+    let results = [];
+    for(let i = 0; i <= str.length; i++){
+    results.push(str.slice([i]));
+    };
+    return results;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -96,17 +93,13 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-    let result = [];
-    for (let i = 0; i < recipe.length; i++) {
-        let str = recipe[i]
-        let split = str.split(' ');
-        let slice = split.slice(2)
-        let join = slice.join(' ')
-        result.push(join);
-        }
-
-    return result;
-};
+    let results = [];
+    recipe.ingredients.forEach(listItem => {
+      let items = listItem.split(' ').splice(2).join(' ');
+      results.push(items);
+    });
+    return results;
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -118,17 +111,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
-    let result = [];
-    for (let i = 0; i < recipe.length; i++) {
-        let str =recipe[i]
-        let split = str.split(' ');
-        let slice = split.slice(0,1)
-        let join = slice.join(' ')
-        result.push(join);
-        }
-
-    return result;
-};
+    let results = [];
+    recipe.steps.forEach(listItems => {
+      results.push(listItems.split(' ')[0]);
+    })
+    return results;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -142,16 +130,15 @@ For example:
   removeEvenValues(integers);
   console.log(integers) will print [1, 3, 5]
 ------------------------------------------------------------------------------------------------ */
-
+    
 const removeEvenValues = (arr) => {
-    for (let i=0; i<arr.length; i++){
-      let even = arr[i]  % 2;
-      if (even ===0){
-        arr.splice(i,1);
+    for(let i =0; i < arr.length; i++){
+      while(arr[i] % 2 === 0){
+        arr.splice(i, 1);
       }
     }
-    return arr
-    };
+    return arr;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
