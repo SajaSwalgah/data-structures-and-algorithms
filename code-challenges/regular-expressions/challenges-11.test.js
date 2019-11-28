@@ -9,8 +9,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-    let regex = /^[0-9]{4}$/g;
-    return regex.test(pin);
+    let regular = /^[0-9]{4}$/g;
+    return regular.test(pin);
   };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,8 +30,9 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
-};
+  let regular = /^(\w+)(.\w+)@(\w+(.com|.net|.org))$/g;
+  return regular.test(email);
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -55,9 +56,9 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
-
+  let regular = /^(\d{3}|\(\d{3}\))-? ?\d{3}-? ?\d{4}$/;
+  return regular.test(phoneNumber);
+ };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
 
