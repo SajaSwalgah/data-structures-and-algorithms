@@ -9,9 +9,12 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  let letters = [];
+  arr.forEach(element => {
+    letters.push(element.charAt(0));
+  });
+  return letters;
 };
-برمجة تطبيقات الاجهزة
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,7 +25,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  let happiness = [];
+  arr.forEach(smiles => {
+    if(smiles.includes(':)')) {
+      happiness.push(smiles);
+    }
+  })
+  return happiness;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +55,11 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').map((element, index) => {
+    if(index % 2 !==0){
+      return element;
+    }
+  }).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,9 +67,14 @@ CHALLENGE 5
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
-
 const allHappy = (arr) => {
-  // Solution code here...
+  let happy = true;
+  arr.forEach(smile => {
+    if(!smile.includes(':)')){
+      happy = false;
+    }
+  })
+  return happy;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +84,11 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter(string => {
+    if(string.includes(target)){
+      return string;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,8 +97,13 @@ CHALLENGE 7
 Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
 ------------------------------------------------------------------------------------------------ */
 
+
 const findEvery = (arr, target) => {
-  // Solution code here...
+  return arr.every(string => {
+    if (string.includes(target)) {
+      return true;
+    } else return false;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
